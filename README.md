@@ -59,22 +59,23 @@ The game world is a 3D cube with coordinates ranging from (0,0,0) to (99,99,99):
 
 4. **Configure OpenAI API**
    
-   You have two options for setting up your OpenAI API key:
+   Create a `.env` file in the project root directory and add your OpenAI API key:
    
-   **Option A: Environment Variable (Recommended)**
-   `bash
+   ```plaintext
+   OPENAI_API_KEY=your_api_key_here
+   ```
+   
+   Alternatively, you can set it directly as an environment variable:
+   
+   ```bash
    # On Windows
    set OPENAI_API_KEY=your_api_key_here
    
    # On macOS/Linux
    export OPENAI_API_KEY=your_api_key_here
-   `
+   ```
    
-   **Option B: Edit config.py**
-   Open config.py and replace the empty string with your API key:
-   `python
-   OPENAI_API_KEY = "your_api_key_here"
-   `
+   The game uses python-dotenv to automatically load the API key from the .env file when starting. Make sure to keep your .env file private and never commit it to version control.
 
 5. **Run the game**
    `bash
